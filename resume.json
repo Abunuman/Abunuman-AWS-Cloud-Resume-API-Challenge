@@ -1,0 +1,151 @@
+{
+  "id": {"S": "1"},
+  "basics": {
+    "M": {
+      "name": {"S": "Toyyib Muhammad-Jamiu"},
+      "label": {"S": "Cloud Engineer and AI/ML Enthusiast"},
+      "email": {"S": "rxcloud01@gmail.com"},
+      "phone": {"S": "+234-70-4522-5242"},
+      "url": {"S": "https"},
+      "summary": {"S": "Toyyib is a Cloud Engineer with 2 years experience and learning AI/ML at the 3 Million Tech Talent Initiative of the Federal Republic of Nigeria. I am a tenacious, hardworking individual, a goal-getter and team-player who has successfully collaborated with teams on projects."},
+      "location": {
+        "M": {
+          "address": {"S": "5, Blessed Villa"},
+          "postalCode": {"S": "2410101"},
+          "city": {"S": "Ilorin"},
+          "countryCode": {"S": "Nigeria"},
+          "region": {"S": "Kwara State"}
+        }
+      },
+      "profiles": {
+        "L": [
+          {
+            "M": {
+              "network": {"S": "Twitter"},
+              "username": {"S": "nerdrx01"},
+              "url": {"S": "https://x.com/nerdrx01"}
+            }
+          }
+        ]
+      }
+    }
+  },
+  "work": {
+    "L": [
+      {
+        "M": {
+          "name": {"S": "Sun Pharma"},
+          "position": {"S": "Medical Sales Representative"},
+          "startDate": {"S": "2023-08-07"},
+          "endDate": {"S": "2014-01-01"},
+          "summary": {"S": "Industrial Pharmacy"},
+          "highlights": {
+            "L": [
+              {"S": "Star Club Awardee"}
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "education": {
+    "L": [
+      {
+        "M": {
+          "institution": {"S": "University"},
+          "url": {"S": "https://www.ui.edu.ng/"},
+          "area": {"S": "Pharmacy"},
+          "studyType": {"S": "Bachelor"},
+          "startDate": {"S": "2014-04-10"},
+          "endDate": {"S": "2021-02-04"},
+          "score": {"S": "4.9"},
+          "courses": {
+            "L": [
+              {"S": "PCH - CLI"}
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "awards": {
+    "L": [
+      {
+        "M": {
+          "title": {"S": "Award"},
+          "date": {"S": "2024-05-14"},
+          "awarder": {"S": "Company"},
+          "summary": {"S": "Star Club"}
+        }
+      }
+    ]
+  },
+  "certificates": {
+    "L": [
+      {
+        "M": {
+          "name": {"S": "Certificate"},
+          "date": {"S": "2021-11-07"},
+          "issuer": {"S": "Company"},
+          "url": {"S": "https://certificate.com"}
+        }
+      }
+    ]
+  },
+  "skills": {
+    "L": [
+      {
+        "M": {
+          "name": {"S": "Web Development"},
+          "level": {"S": "Intermediate"},
+          "keywords": {
+            "L": [
+              {"S": "HTML"},
+              {"S": "CSS"},
+              {"S": "JavaScript"}
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "languages": {
+    "L": [
+      {
+        "M": {
+          "language": {"S": "English"},
+          "fluency": {"S": "L2"}
+        }
+      }
+    ]
+  },
+  "interests": {
+    "L": [
+      {
+        "M": {
+          "name": {"S": "Sports"},
+          "keywords": {
+            "L": [
+              {"S": "Arsenal"},
+              {"S": "UCL"}
+            ]
+          }
+        }
+      }
+    ]
+  },
+
+  "projects": {
+    "L": [
+      {
+        "M": {
+          "name": {"S": "Project"},
+          "startDate": {"S": "2019-01-01"},
+          "endDate": {"S": "2021-01-01"},
+          "description": {"S": "Description..."},
+          "url": {"S": "https://project.com/"}
+        }
+      }
+    ]
+  }
+}
