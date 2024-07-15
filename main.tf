@@ -110,7 +110,7 @@ resource "aws_iam_policy" "iam_policy_for_resume_fetcher" {
 # }
 
 resource "aws_iam_role_policy_attachment" "lambda_get_item_policy" {
-  role       = aws_iam_role.lambda_get_item_role.name
+  role       = aws_iam_role.lambda_get_item.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
