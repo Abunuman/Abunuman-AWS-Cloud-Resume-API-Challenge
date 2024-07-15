@@ -71,7 +71,7 @@ resource "aws_iam_policy" "iam_policy_for_resume_fetcher" {
 
 resource "aws_iam_role_policy_attachment" "lambda_exec_policy" {
   role       = aws_iam_role.lambda_exec.name
-  policy_arn = "aws_iam_policy.iam_policy_for_resume_fetcher.arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
 resource "aws_lambda_function_url" "resume_fetcher_url" {
