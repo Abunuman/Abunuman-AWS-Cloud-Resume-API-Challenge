@@ -4,8 +4,8 @@ import boto3
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table('Resumes')
 
-def lambda_handler(event, context):
-    resume_id = event.get('pathParameters').get('id')
+def lambda_handler(context):
+    resume_id = '1'
     
     try:
         response = table.get_item(Key={'id': resume_id})
