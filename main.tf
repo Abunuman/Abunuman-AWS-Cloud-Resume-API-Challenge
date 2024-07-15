@@ -44,19 +44,10 @@ resource "aws_iam_policy" "iam_policy_for_resume_fetcher" {
       {
         Version = "2012-10-17"
         Statement = [
-          {
-            "Action" : [
-              "logs: CreateLogGroup",
-              "logs: CreateLogStream",
-              "logs: PutLogEvents"
-            ],
-            "Resource" : "arn:aws:logs:*:*:*",
-            "Effect" :"Allow"
-          },
+        
           {
             "Effect" : "Allow",
             "Action" : [
-              "dynamodb: UpdateItem",
               "dynamodb: GetItem"
             ],
             "Resource" : "arn:aws:dynamodb:*:*:table/Resumes"
@@ -132,3 +123,13 @@ resource "aws_lambda_function_url" "resume_fetcher_url" {
 # output "api_url" {
 #   value = "${aws_api_gateway_rest_api.resume_api.execution_arn}/resume/{id}"
 # }
+
+# {
+#   "Action" : [
+#     "logs: CreateLogGroup",
+#     "logs: CreateLogStream",
+#     "logs: PutLogEvents"
+#   ],
+#   "Resource" : "arn:aws:logs:*:*:*",
+#   "Effect" :"Allow"
+# },
