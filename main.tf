@@ -1,13 +1,13 @@
-resource "aws_dynamodb_table" "resumes" {
-  name           = "Resumes"
-  hash_key       = "id"
-  billing_mode   = "PAY_PER_REQUEST"
+# resource "aws_dynamodb_table" "resumes" {
+#   name           = "Resumes"
+#   hash_key       = "id"
+#   billing_mode   = "PAY_PER_REQUEST"
 
-  attribute {
-    name = "id"
-    type = "S"
-  }
-}
+#   attribute {
+#     name = "id"
+#     type = "S"
+#   }
+# }
 
 resource "aws_lambda_function" "resume_fetcher" {
   filename         = "lambda_function.zip"
