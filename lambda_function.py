@@ -5,7 +5,7 @@ dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table('Resumes')
 
 def lambda_handler(context):
-    resume_id = '1234' #Replace ID
+    resume_id = '1' #Replace ID
     
     try:
         response = table.get_item(Key={'id': resume_id})
