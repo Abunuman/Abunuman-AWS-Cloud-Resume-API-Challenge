@@ -13,13 +13,31 @@ resource "aws_lambda_function" "resume_fetcher" {
   filename         = "lambda_function.zip"
   source_code_hash = filebase64sha256("lambda_function.zip")
   function_name    = "resume_fetcher"
-  role             = aws_iam_role.lambda_exec.arn
+  role             = aws_iam_role.lambda_get_item.arn
   handler          = "lambda_function.lambda_handler"
   runtime          = "python3.8"
 }
 
-resource "aws_iam_role" "lambda_exec" {
-  name = "lambda_exec_role"
+# resource "aws_iam_role" "lambda_exec" {
+#   name = "lambda_exec_role"
+
+#   assume_role_policy = jsonencode({
+#     Version = "2012-10-17"
+#     Statement = [
+#       {
+#         Action = "sts:AssumeRole"
+#         Effect = "Allow"
+#         Sid    = ""
+#         Principal = {
+#           Service = "lambda.amazonaws.com"
+#         }
+#       },
+#     ]
+#   })
+# }
+
+resource "aws_iam_role" "lambda_get_item" {
+  name = "lambda_get_item_role"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -36,6 +54,7 @@ resource "aws_iam_role" "lambda_exec" {
   })
 }
 # IAM Role Policy Attachment for Lambda Execution
+
 resource "aws_iam_policy" "iam_policy_for_resume_fetcher" {
   name = "aws_iam_policy_for_resume_fetcher"
   path = "/"
@@ -59,9 +78,39 @@ resource "aws_iam_policy" "iam_policy_for_resume_fetcher" {
     )
 
 }
+# resource "aws_iam_policy" "iam_policy_for_resume_fetcher_logs" {
+#   name = "aws_iam_policy_for_resume_fetcher logs"
+#   path = "/"
+#   description = "AWS IAM Policy for managing the resume_fetcher logs"
+#     policy = jsonencode(
+#       {
+#         Version = "2012-10-17"
+#         Statement = [
+        
+#           {
+#             "Action" : [
+#               "logs: CreateLogGroup",
+#               "logs: CreateLogStream",
+#               "logs: PutLogEvents"
+#             ],
+#             "Resource" : "arn:aws:logs:*:*:*",
+#             "Effect" :"Allow"
+#           }
+#         ]
+#       }
+    
 
-resource "aws_iam_role_policy_attachment" "lambda_exec_policy" {
-  role       = aws_iam_role.lambda_exec.name
+#     )
+
+# }
+
+# resource "aws_iam_role_policy_attachment" "lambda_exec_policy" {
+#   role       = aws_iam_role.lambda_exec.name
+#   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+# }
+
+resource "aws_iam_role_policy_attachment" "lambda_get_item_policy" {
+  role       = aws_iam_role.lambda_get_item_role.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
@@ -124,12 +173,3 @@ resource "aws_lambda_function_url" "resume_fetcher_url" {
 #   value = "${aws_api_gateway_rest_api.resume_api.execution_arn}/resume/{id}"
 # }
 
-# {
-#   "Action" : [
-#     "logs: CreateLogGroup",
-#     "logs: CreateLogStream",
-#     "logs: PutLogEvents"
-#   ],
-#   "Resource" : "arn:aws:logs:*:*:*",
-#   "Effect" :"Allow"
-# },
