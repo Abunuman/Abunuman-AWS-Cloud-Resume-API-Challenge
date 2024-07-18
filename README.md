@@ -1,3 +1,6 @@
+
+![Toyyib's Architectuere Diagram](images/Architecture-Diagram.png)
+
 # Resume Fetcher API
 This project sets up an AWS Lambda function that fetches resume data from a DynamoDB table and exposes it via a Function URL. The setup and deployment are managed using Terraform and GitHub Actions.
 
@@ -191,10 +194,23 @@ curl -X GET "https://{function-url}/resume/{id}"
 ```
 With that you have been able to complete the AWS Cloud Resume API Challenge.
 
-Cleaning Up
+## Cleaning Up
 To clean up the resources created by Terraform, run:
 
 ```
 terraform destroy
 
 ```
+This will remove all AWS resources created by this project.
+
+## Troubleshooting
+If you encounter any issues, ensure that:
+
+- Your AWS credentials are correctly configured.
+
+- The lambda_function.zip file is correctly created and referenced.
+
+- Terraform is properly initialized and configured.
+
+Feel free to reach out with any questions or issues. Happy coding!
+
