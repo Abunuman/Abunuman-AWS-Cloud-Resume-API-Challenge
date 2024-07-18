@@ -58,6 +58,7 @@ resource "aws_iam_role_policy_attachment" "lambda_get_item_policy" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
+# Lambda Function URL
 resource "aws_lambda_function_url" "resume_fetcher_url" {
   function_name = aws_lambda_function.resume_fetcher.function_name
   authorization_type = "NONE"
@@ -72,3 +73,6 @@ resource "aws_lambda_function_url" "resume_fetcher_url" {
   }
 }
 
+output "function_url" {
+  value = aws_lambda_function_url.resume_fetcher_url.function_url
+}
