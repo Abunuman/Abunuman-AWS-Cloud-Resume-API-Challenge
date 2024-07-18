@@ -191,3 +191,10 @@ curl -X GET "https://{function-url}/resume/{id}"
 ```
 With that you have been able to complete the AWS Cloud Resume API Challenge.
 
+Cleaning Up
+To clean up the resources created by Terraform, run:
+
+```
+terraform destroy
+
+```
