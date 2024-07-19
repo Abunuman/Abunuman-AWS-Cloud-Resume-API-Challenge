@@ -7,17 +7,17 @@ This project sets up an AWS Lambda function that fetches resume data from a Dyna
 ## Prerequisites
 Before you start, make sure you have the following installed:
 
-[ ] AWS CLI
+- [X] AWS CLI
 
-[ ] Terraform
+- [X] Terraform
 
-[ ] Python 3.8+
+- [X] Python 3.8+
 
-[ ] Pip
+- [X] Pip
 
-[ ] An AWS account with necessary permissions
+- [X] An AWS account with necessary permissions
 
-[ ] GitHub account with access to create and use GitHub Actions
+- [X] GitHub account with access to create and use GitHub Actions
 ```
  project/
 ├── lambda_function.py
